@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function About() {
   const domains = [
-    { icon: Globe, title: 'Web Development', description: 'Full-stack development with modern frameworks' },
+    { icon: Globe, title: 'Web Developer', description: 'Full-stack development with modern frameworks' },
     { icon: Brain, title: 'Artificial Intelligence', description: 'Machine Learning and AI applications' },
     { icon: Wifi, title: 'Internet of Things', description: 'Smart devices and connected systems' },
     { icon: Shield, title: 'Cybersecurity', description: 'Ethical hacking and data protection' },
