@@ -10,15 +10,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors;
   }
   
   .btn-secondary {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300;
+    @apply border-2 border-gray-300 dark:border-gray-600 hover:border-primary text-gray-900 dark:text-white font-semibold py-3 px-6 rounded-lg transition-colors;
   }
   
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1;
+    @apply bg-white dark:bg-gray-800 rounded-lg transition-all;
   }
   
   .input-field {
