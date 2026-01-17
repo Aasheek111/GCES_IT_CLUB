@@ -1,4 +1,4 @@
-import { Building, Calendar, Handshake } from 'lucide-react'
+import { Building, Calendar } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
