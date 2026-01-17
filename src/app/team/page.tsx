@@ -1,4 +1,5 @@
-import { Users } from 'lucide-react'
+import { Users, Linkedin, Mail } from 'lucide-react'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Our Team - GCES IT Club',
@@ -6,16 +7,16 @@ export const metadata = {
 }
 
 export default function Team() {
-  const members = [
-    { name: 'MAYUKH BARAL', position: 'President' },
-    { name: 'BISHAL ACHARYA', position: 'Vice President' },
-    { name: 'SWORNIMA DHUNGANA', position: 'Secretary' },
-    { name: 'MAMATA ADHIKARI', position: 'Joint Secretary' },
-    { name: 'ROSY ACHARYA', position: 'Treasurer' },
-    { name: 'ABHISEKH DEWAN', position: 'Graphics Lead' },
-    { name: 'AASHIK GAUTAM', position: 'Event Co-ordinator' },
-    { name: 'SUCHANA CHHETRI', position: 'Social Media Manager' },
-    { name: 'PRAPTI ACHARYA', position: 'Content Creator' },
+  const boardMembers = [
+    { name: 'MAYUKH BARAL', position: 'President', image: '/mayuk.jpg', linkedin: '#' },
+    { name: 'BISHAL ACHARYA', position: 'Vice President', image: '/bishal.jpg', linkedin: '#' },
+    { name: 'SWORNIMA DHUNGANA', position: 'Secretary', image: '/swarnima.jpg', linkedin: '#' },
+    { name: 'MAMATA ADHIKARI', position: 'Joint Secretary', image: '/mamata.jpg', linkedin: '#' },
+    { name: 'ROSY ACHARYA', position: 'Treasurer', image: '/rozy.jpg', linkedin: '#' },
+    { name: 'ABHISEKH DEWAN', position: 'Graphics Lead', image: '/abhisheq.png', linkedin: '#' },
+    { name: 'AASHIK GAUTAM', position: 'Event Co-ordinator', image: '/aashik.jpg', linkedin: '#' },
+    { name: 'SUCHANA CHHETRI', position: 'Social Media Manager', image: '/suchana.jpg', linkedin: '#' },
+    { name: 'PRAPTI ACHARYA', position: 'Content Creator', image: '/prapti.jpg', linkedin: '#' },
   ]
 
   return (
@@ -31,16 +32,38 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {members.map((member, index) => (
-            <div key={index} className="card p-6 text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl font-bold text-white">
-                  {member.name.charAt(0)}
-                </span>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {boardMembers.map((member, index) => (
+            <div key={index} className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="relative h-80 overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
+                  <p className="text-primary-light font-semibold">{member.position}</p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-              <p className="text-primary font-semibold">{member.position}</p>
+              
+              <div className="p-6">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                      <Linkedin className="w-5 h-5 text-primary hover:text-white" />
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm text-gray-500 dark:text-gray-400">2026-2027</div>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
