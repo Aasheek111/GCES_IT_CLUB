@@ -24,7 +24,8 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3">
-            <span className="text-2xl font-bold text-primary">GCES IT Club</span>
+            <img src="/logo.png" alt="LOGO" className='w-10 h-10' />
+            <span className="text-xl font-bold text-primary"> GCES IT Club</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
