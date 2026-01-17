@@ -24,7 +24,7 @@ export default function Carousel() {
   const next = () => setCurrent((current + 1) % slides.length)
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden rounded-xl">
+    <div className="relative w-full h-[600px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -35,16 +35,16 @@ export default function Carousel() {
           <Image src={slide.image} alt={slide.title} fill className="object-cover" priority={index === 0} />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8">
-            <h3 className="text-3xl md:text-4xl font-bold text-white">{slide.title}</h3>
+            <h3 className="text-3xl md:text-4xl text-center text-white">{slide.title}</h3>
           </div>
         </div>
       ))}
 
-      <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full transition-colors">
+      <button onClick={prev} className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full transition-colors z-10">
         <ChevronLeft className="w-6 h-6 text-gray-900" />
       </button>
 
-      <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full transition-colors">
+      <button onClick={next} className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full transition-colors z-10">
         <ChevronRight className="w-6 h-6 text-gray-900" />
       </button>
 
