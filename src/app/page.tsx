@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import { Code2, Rocket, Users, Calendar, ArrowRight, Building, Award } from 'lucide-react'
 import Carousel from '@/components/Carousel'
+const metadata = {
+  title: 'Our Team - GCES IT Club',
+  description: 'Meet the Board Executive Members of GCES IT Club',
+}
 
 export default function Home() {
   const upcomingEvents = [
@@ -44,7 +48,7 @@ export default function Home() {
               We provide comprehensive learning opportunities and resources to help students excel in technology
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="bg-white dark:bg-gray-900 p-6 rounded-lg text-center">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
