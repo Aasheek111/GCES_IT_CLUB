@@ -12,9 +12,9 @@ export default function Team() {
     { name: 'BISHAL ACHARYA', position: 'Vice President', image: '/bishal.jpg', linkedin: '#' },
     { name: 'SWORNIMA DHUNGANA', position: 'Secretary', image: '/swarnima.jpg', linkedin: '#' },
     { name: 'MAMATA ADHIKARI', position: 'Joint Secretary', image: '/mamata.jpg', linkedin: '#' },
+    { name: 'AASHIK GAUTAM', position: 'Event Co-ordinator', image: '/aashik.jpg', linkedin: '#' },
     { name: 'ROSY ACHARYA', position: 'Treasurer', image: '/rozy.jpg', linkedin: '#' },
     { name: 'ABHISEKH DEWAN', position: 'Graphics Lead', image: '/abhisheq.png', linkedin: '#' },
-    { name: 'AASHIK GAUTAM', position: 'Event Co-ordinator', image: '/aashik.jpg', linkedin: '#' },
     { name: 'SUCHANA CHHETRI', position: 'Social Media Manager', image: '/suchana.jpg', linkedin: '#' },
     { name: 'PRAPTI ACHARYA', position: 'Content Creator', image: '/prapti.jpg', linkedin: '#' },
   ]
