@@ -14,38 +14,62 @@ export default function Navbar() {
     { href: '/about', label: 'About' },
     { href: '/team', label: 'Team' },
     { href: '/events', label: 'Events' },
-    { href: '/notes', label: 'Notes' },
     { href: '/partners', label: 'Partners' },
     { href: '/contact', label: 'Contact' },
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b">
+
+
+      <div className="border-b dark:border-gray-800 h-14">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+
+
           <Link href="/" className="flex items-center gap-3">
-            <img src="/logo/logo.png" alt="LOGO" className='w-10 h-10' />
-            <span className="text-xl font-bold text-primary"> GCES IT Club</span>
+            <img
+              src="/logo/logo.png"
+              alt="GCES IT Club"
+              className=" md:w-12 md:h-12 sm:w-8 sm:h-8 rounded-full"
+            />
+            <span className="text-lg font-semibold text-blue-700 dark:text-blue-400">
+              GCES IT Club
+            </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Top Menu */}
+          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+            <Link
+              href="/notes"
+              className="hover:underline text-[12px]"
+            >
+              NOTES
+            </Link>
+            <Link
+              href="/contributor"
+              className="hover:underline text-[12px]"
+            >
+              CONTRIBUTORS
+            </Link>
+            <Link
+              href="/register"
+              className="hover:underline text-[12px]"
+            >
+              REGISTER
+            </Link>
+
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
             >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {theme === 'dark'
+                ? <Sun className="w-4 h-4" />
+                : <Moon className="w-4 h-4" />}
             </button>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2"
@@ -53,29 +77,58 @@ export default function Navbar() {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+      </div>
 
-        {isOpen && (
-          <div className="md:hidden py-4 space-y-4">
+      {/* ===== Main Navigation Bar ===== */}
+      <nav className="hidden md:block h-12">
+        <div className="container mx-auto px-6">
+          <ul className="flex justify-end gap-10 h-14 items-center">
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="uppercase text-sm tracking-wide text-[13px]
+                             text-gray-700 dark:text-gray-300
+                             hover:text-blue-700 dark:hover:text-blue-400
+                             transition-colors "
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      {/* ===== Mobile Menu ===== */}
+      {isOpen && (
+        <div className="md:hidden border-t dark:border-gray-800">
+          <div className="px-6 py-4 space-y-4">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-gray-700 dark:text-gray-300 hover:text-primary"
+                className="block text-gray-700 dark:text-gray-300 font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="flex items-center gap-2 text-gray-700 dark:text-gray-300"
+            <Link
+              href="/contributor"
+              className="block text-gray-700 dark:text-gray-300 font-medium"
             >
-              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              <span>{theme === 'dark' ? 'Light' : 'Dark'} Mode</span>
-            </button>
+              Contributors
+            </Link>
+            <Link
+              href="/register"
+              className="block text-gray-700 dark:text-gray-300 font-medium"
+            >
+              Register
+            </Link>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      )}
+    </header>
   )
 }
