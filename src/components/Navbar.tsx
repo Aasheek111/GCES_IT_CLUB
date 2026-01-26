@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
-
+import Image from 'next/image'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const { theme, toggleTheme } = useTheme()
@@ -27,10 +27,12 @@ export default function Navbar() {
 
 
           <Link href="/" className="flex items-center gap-3">
-            <img
+            <Image
               src="/logo/logo.png"
               alt="GCES IT Club"
-              className=" md:w-12 md:h-12 sm:w-8 sm:h-8 rounded-full"
+              width={48}
+              height={48}
+              className="w-10 h-10 sm:w-8 sm:h-8 md:w-12 md:h-12 rounded-full"
             />
             <span className="text-lg font-semibold text-blue-700 dark:text-blue-400">
               GCES IT Club
